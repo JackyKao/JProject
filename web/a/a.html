@@ -11,10 +11,10 @@
 <script>
         d3.csv("a.csv", function(d) {
         	console.log(d);
-        	// var parsedCSV = d3.csv.parseRows(data);
-        	// console.log(parsedCSV);
-                dataset = data.map(function(d) { return [ +d["x"], +d["y"] ]; });
-                console.log(dataset);
+        	var parsedCSV = d3.csv.parseRows(d);
+        	console.log(parsedCSV);
+//                 dataset = data.map(function(d) { return [ +d["x"], +d["y"] ]; });
+//                 console.log(dataset);
         });
         console.log(5 + 6);
 // d3.csv("a.csv", function(data) {
