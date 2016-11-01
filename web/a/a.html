@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<!-- Website Template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ZiZurz Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<script>
+        d3.csv("a.csv", function(data) {
+        	console.log(data);
+        	var parsedCSV = d3.csv.parseRows(data);
+        	console.log(parsedCSV);
+        });
+        console.log(5 + 6);
+// d3.csv("a.csv", function(data) {
+//   dataset = data.map(function(d) { return [ +d["x"], +d["y"] ]; });
+//   var svgContainer = d3.selectAll(".smallBox").append("svg").attr("width", 400).attr("height", 400);
+// svgContainer.append('circle').attr('cx', 60).attr('cy', 60).attr('r', 50);
+// var lineFunction = d3.line().x(function(d) { return d.x; }).y(function(d) { return d.y; });
+// var lineGraph = svgContainer.append("path").attr("d", lineFunction(dataset)).attr("stroke", "blue").attr("stroke-width", 2).attr("fill", "none");
+// });
+
+
+// var lineData = [ 
+// { "x": 130,   "y": 20},  { "x": 170,  "y": 20},
+// { "x": 160,  "y": 50}, { "x": 140,  "y": 50}, { "x": 130,  "y": 20}
+// ];
+// var svgContainer = d3.selectAll(".smallBox").append("svg").attr("width", 400).attr("height", 400);
+// svgContainer.append('circle').attr('cx', 60).attr('cy', 60).attr('r', 50);
+// var lineFunction = d3.line().x(function(d) { return d.x; }).y(function(d) { return d.y; });
+// var lineGraph = svgContainer.append("path").attr("d", lineFunction(lineData)).attr("stroke", "blue").attr("stroke-width", 2).attr("fill", "none");
+</script>	
+</body>
+</html>
