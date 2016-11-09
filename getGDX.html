@@ -34,7 +34,7 @@ d3.csv("./table.csv", function(data) {
 	x(function(d,i){ return i * (width/ln); }).
 	y(function(d){ return d.Open * (height/maxy); })
 	;
-	var lines = d3.line().
+	var lines1 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
 	y(function(d){ return d.Low * (height/maxLow); })
 	;
@@ -43,7 +43,7 @@ d3.csv("./table.csv", function(data) {
 	attr("class", "pathline").
 	attr("d", lines);
 	ctrl.append("path").data([data]).
-	attr("class", "pathline").
+	attr("class", "pathline1").
 	attr("d", lines);
 
 });
