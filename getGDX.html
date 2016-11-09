@@ -7,17 +7,17 @@
 	stroke-width: 3;
 	fill: none;
 }
-<style type="text/css">
+
 .pathline1 {
 	stroke: red;
 	stroke-width: 3;
 	fill: none;
-}<style type="text/css">
+}
 .pathline2 {
 	stroke: red;
 	stroke-width: 3;
 	fill: none;
-}<style type="text/css">
+}
 .pathline3 {
 	stroke: red;
 	stroke-width: 3;
@@ -48,13 +48,13 @@ d3.csv("./table.csv", function(data) {
 
 	var lines1 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.Low * (height/maxHigh); });	
+	y(function(d){ return d.High * (height/maxHigh); });	
 	var lines2 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
 	y(function(d){ return d.Low * (height/maxLow); });	
 	var lines3 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.Low * (height/maxClose); });
+	y(function(d){ return d.Close * (height/maxClose); });
 
 	ctrl.append("path").data([data]).
 	attr("class", "pathline").
