@@ -9,7 +9,17 @@
 }
 <style type="text/css">
 .pathline1 {
-	stroke: blue;
+	stroke: red;
+	stroke-width: 3;
+	fill: none;
+}<style type="text/css">
+.pathline2 {
+	stroke: red;
+	stroke-width: 3;
+	fill: none;
+}<style type="text/css">
+.pathline3 {
+	stroke: red;
 	stroke-width: 3;
 	fill: none;
 }
@@ -25,19 +35,26 @@ d3.csv("./table.csv", function(data) {
 	data.forEach(function(d) {
 		console.log(d.Open);
 	});
-	var maxy = d3.max(data, function(d) { return d.Open; });
+	var maxOpen = d3.max(data, function(d) { return d.Open; });
+	var maxHigh = d3.max(data, function(d) { return d.High; });
 	var maxLow = d3.max(data, function(d) { return d.Low; });
-	
+	var maxClose = d3.max(data, function(d) { return d.Close; });
+		
 	var ln = data.length;
 	var ctrl  = d3.select("body").append("svg").attr("width", width).attr("height", height);
 	var lines = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.Open * (height/maxy); })
-	;
+	y(function(d){ return d.Open * (height/maxOpen); });
+
 	var lines1 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.Low * (height/maxLow); })
-	;
+	y(function(d){ return d.Low * (height/maxHigh); });	
+	var lines2 = d3.line().
+	x(function(d,i){ return i * (width/ln); }).
+	y(function(d){ return d.Low * (height/maxLow); });	
+	var lines3 = d3.line().
+	x(function(d,i){ return i * (width/ln); }).
+	y(function(d){ return d.Low * (height/maxClose); });
 
 	ctrl.append("path").data([data]).
 	attr("class", "pathline").
@@ -45,6 +62,12 @@ d3.csv("./table.csv", function(data) {
 	ctrl.append("path").data([data]).
 	attr("class", "pathline1").
 	attr("d", lines1);
+	ctrl.append("path").data([data]).
+	attr("class", "pathline2").
+	attr("d", lines2);
+	ctrl.append("path").data([data]).
+	attr("class", "pathline3").
+	attr("d", lines3);
 
 });
 </script>
