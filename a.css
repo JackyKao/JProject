@@ -1,0 +1,16 @@
+.pathline {
+	stroke-width: 3;
+	fill: none;
+}
+#open {
+	stroke: red;
+}
+#high {
+	stroke: blue;
+}
+#low {
+	stroke: green;
+}
+#close {
+	stroke: black;
+}
