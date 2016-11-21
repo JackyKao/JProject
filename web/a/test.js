@@ -19,11 +19,27 @@
        .attr("width",460);
   
   d3.csv("https://jackykao.github.io/JProject/web/a/polygonDataI.csv", function(data) {
+   
    pologonWord(data,"brown");
-  // pologonWord(polygonDataD1,"black");
-  // pologonWord(polygonDataD2,"purple");
-  // pologonWord(polygonDataS,"purple");
+   
+  });
+  
+  d3.csv("https://jackykao.github.io/JProject/web/a/polygonDataD1.csv", function(data) {
+
+    pologonWord(data,"black");
 
   });
+  d3.csv("https://jackykao.github.io/JProject/web/a/polygonDataD2.csv", function(data) {
+
+    pologonWord(data,"purple");
+
+  });
+  d3.csv("https://jackykao.github.io/JProject/web/a/polygonDataS.csv", function(data) {
+
+    pologonWord(data,"purple");
+  });
+  
+  
+  
  
 }
