@@ -23,7 +23,7 @@
   //   {"x":270,"y":120},{"x":310,"y":120},{"x":320,"y":90},{"x":300,"y":90},{"x":280,"y":100},
   // ]
     
-  d3.csv("https://jackykao.github.io/JProject/polygonDataI.csv", function(data) {
+  d3.csv("https://jackykao.github.io/JProject/web/a/polygonDataI.csv", function(data) {
     // console.log(data);
 
   function pologonWord(I,color)
