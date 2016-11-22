@@ -1,6 +1,6 @@
 function wc()
 {
-d3.csv("./wc.csv", 
+d3.csv("./food.csv", 
   function(data)
   {
     d3.wordcloud()
