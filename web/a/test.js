@@ -43,7 +43,7 @@
 //     pologonWord(data,"purple");
 //   });
   
-   d3.csv(polygonDataI,polygonDataD1,polygonDataD2,polygonDataS function(data,data1,data2,data3) {
+   d3.csv(polygonDataI,polygonDataD1,polygonDataD2,polygonDataS, function(data,data1,data2,data3) {
    
    pologonWord(data,"brown");
     pologonWord(data1,"black");
