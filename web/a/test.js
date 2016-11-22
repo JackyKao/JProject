@@ -22,35 +22,35 @@
        .attr("height",170)
        .attr("width",460);
   
-//   d3.csv(polygonDataI, function(data) {
-   
-//    pologonWord(data,"brown");
-   
-//   });
-  
-//   d3.csv(polygonDataD1, function(data) {
-
-//     pologonWord(data,"black");
-
-//   });
-//   d3.csv(polygonDataD2, function(data) {
-
-//     pologonWord(data,"purple");
-
-//   });
-//   d3.csv(polygonDataS, function(data) {
-
-//     pologonWord(data,"purple");
-//   });
-  
-   d3.csv(polygonDataI,polygonDataD1,polygonDataD2,polygonDataS, function(data,data1,data2,data3) {
+  d3.csv(polygonDataI, function(data) {
    
    pologonWord(data,"brown");
-    pologonWord(data1,"black");
-    pologonWord(data2,"purple");
-    pologonWord(data3,"purple");
    
   });
+  
+  d3.csv(polygonDataD1, function(data) {
+
+    pologonWord(data,"black");
+
+  });
+  d3.csv(polygonDataD2, function(data) {
+
+    pologonWord(data,"purple");
+
+  });
+  d3.csv(polygonDataS, function(data) {
+
+    pologonWord(data,"purple");
+  });
+  
+//    d3.csv(polygonDataI,polygonDataD1,polygonDataD2,polygonDataS, function(data,data1,data2,data3) {
+   
+//    pologonWord(data,"brown");
+//     pologonWord(data1,"black");
+//     pologonWord(data2,"purple");
+//     pologonWord(data3,"purple");
+   
+//   });
   
  
 }
