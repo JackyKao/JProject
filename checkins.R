@@ -73,9 +73,7 @@ for (i in 2:alldata) {
   #轉換資料為JSON格式
   fbjson <- fromJSON(temp)
   #取得打卡數$checkins
-  checkins <- fbjson$checkins
-
-  
+  checkins <- fbjson$checkins  
   #印出打卡數
   print(checkins)
   #if NULL checkins=0
