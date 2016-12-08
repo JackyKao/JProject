@@ -63,7 +63,7 @@ data<-read.csv("NewTaipei.LINE.csv", header=F, sep=",")
 alldata <- length(data$V15)
 #宣告allcheckins為陣列型態
 allcheckins <- array(dim = alldata) 
-#i從1到alldata
+#i從2到alldata
 for (i in 2:alldata) { 
   #合併URL字串
   urlPath <- paste0("https://graph.facebook.com/",data$V15[i],"?access_token=",token)
