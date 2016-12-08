@@ -1,87 +1,87 @@
-#²MªÅ°O¾ĞÅé
+#æ¸…ç©ºè¨˜æ†¶é«”
 rm(list=ls(all.names=TRUE))
 
-#¸ü¤JRCurl®M¥ó
+#è¼‰å…¥RCurlå¥—ä»¶
 library(RCurl)
 
-#¨Ï¥Îrjson®M¥ó±NURL¸ê®ÆÂà´«json®æ¦¡
+#ä½¿ç”¨rjsonå¥—ä»¶å°‡URLè³‡æ–™è½‰æ›jsonæ ¼å¼
 library(rjson)
 
-#±NtokenÀx¦s¬°ÅÜ¼Æ
+#å°‡tokenå„²å­˜ç‚ºè®Šæ•¸
 token <- "EAACEdEose0cBAORUwCwOnrwp3geE0pITSx2yjQLvFQw9dOoUjnMztglsoTaGrVEDiTJZCZAkxTTjmwI5WHZBGuGYdYIQjX0OZAlcnycZAGDqP569ZAdGKoer3ZASAFJz2K3qmFQmYnbpdL6ZAHQ4JZByxgqY75DcwZBykZCaGWKOrt1qgZDZD"
-#Åª¨úcsvÀÉ®×
+#è®€å–csvæª”æ¡ˆ
 data<-read.csv("NewTaipei.LINE.csv", header=F, sep=",")
 
-#¬d¬İ¸ê®Æºû«×dimensions
+#æŸ¥çœ‹è³‡æ–™ç¶­åº¦dimensions
 dim(data)
 
-#­pºâV2Äæ¦ìªºªø«×
+#è¨ˆç®—V2æ¬„ä½çš„é•·åº¦
 length(data$V15)
 
-#Åª¨úv2Äæ²Ä¤@µ§¸ê®Æ
+#è®€å–v2æ¬„ç¬¬ä¸€ç­†è³‡æ–™
 i <- data$V15[2]
 
+#å»é™¤ç©ºç™½
+x <- gsub(" ","",data$V15[i])
 
-  x <- gsub(" ","",data$V15[i])
 
-
-#³s±µURL¦r¦ê
-urlPath <- paste0("https://graph.facebook.com/",i,"?access_token=",token)
-
-urlPath <- gsub(" ","",urlPath)
-#¨ú±oURL¸ê®Æ
+#é€£æ¥URLå­—ä¸²
+urlPath1 <- paste0("https://graph.facebook.com/",i,"?access_token=",token)
+#å»é™¤ç©ºç™½
+urlPath <- gsub(" ","",urlPath1)
+#å–å¾—URLè³‡æ–™
 temp <- getURL(urlPath)
 
-#±N¸ê®ÆÂà¦¨json
+#å°‡è³‡æ–™è½‰æˆjson
 fbjson <- fromJSON(temp)
 
-#Åª¨ú¥´¥d¼Æ$checkins¸ê®Æ
+#è®€å–æ‰“å¡æ•¸$checkinsè³‡æ–™
 fbjson$checkins
 
-#Âà´«¬°¼Æ¦r¸ê®Æ«¬ºA
+#è½‰æ›ç‚ºæ•¸å­—è³‡æ–™å‹æ…‹
 t1 <- as.integer(fbjson$checkins)
-
+ï¼ƒåˆ¤æ–·æ˜¯å¦NULL
 tt <- NULL
 if ( is.null(tt) ) { print(tt)}
-if ( is.not.null(tt) ) { print(tt)}
+
 
 
 ############
-#¥Î°j°é°õ¦æ#
+#ç”¨è¿´åœˆåŸ·è¡Œ#
 ############
-#²MªÅ°O¾ĞÅé
+#æ¸…ç©ºè¨˜æ†¶é«”
 rm(list=ls(all.names=TRUE))
-#¸ü¤JRCurl®M¥ó
+#è¼‰å…¥RCurlå¥—ä»¶
 library(RCurl)
-#¨Ï¥Îrjson®M¥ó±NURL¸ê®ÆÂà´«json®æ¦¡
+#ä½¿ç”¨rjsonå¥—ä»¶å°‡URLè³‡æ–™è½‰æ›jsonæ ¼å¼
 library(rjson)
-#±NtokenÀx¦s¬°ÅÜ¼Æ
+#å°‡tokenå„²å­˜ç‚ºè®Šæ•¸
 token <- "EAACEdEose0cBAMILTm52NZAwDcMqpe2jnurMOA6lNgtjU1WGokp8sKvfkLBCiZCe03jPZBfS6MBSzggCp2WeuM2XDPS8fuzSUBdZBSgpi2ZAVPpsKK8OlhQqP0pOroWhu0lAn8vbiJifX4pc65NqnJEZAuBlAMiFMeVcUBSXjZBiQZDZD"
-#Åª¨úcsvÀÉ®×
+#è®€å–csvæª”æ¡ˆ
 data<-read.csv("NewTaipei.LINE.csv", header=F, sep=",")
-#±N¸ê®Æªø«×Àx¦s¬°ÅÜ¼Æ
+#å°‡è³‡æ–™é•·åº¦å„²å­˜ç‚ºè®Šæ•¸
 alldata <- length(data$V15)
-#«Å§iallcheckins¬°°}¦C«¬ºA
+#å®£å‘Šallcheckinsç‚ºé™£åˆ—å‹æ…‹
 allcheckins <- array(dim = alldata) 
-#i±q1¨ìalldata
+#iå¾1åˆ°alldata
 for (i in 2:alldata) { 
-  #¦X¨ÖURL¦r¦ê
+  #åˆä½µURLå­—ä¸²
   urlPath <- paste0("https://graph.facebook.com/",data$V15[i],"?access_token=",token)
   urlPath <- gsub(" ","",urlPath)
-  #¨ú±oURL¤º®e
+  #å–å¾—URLå…§å®¹
   temp <- getURL(urlPath)
-  #Âà´«¸ê®Æ¬°JSON®æ¦¡
+  #è½‰æ›è³‡æ–™ç‚ºJSONæ ¼å¼
   fbjson <- fromJSON(temp)
-  #¨ú±o¥´¥d¼Æ$checkins
-
+  #å–å¾—æ‰“å¡æ•¸$checkins
   checkins <- fbjson$checkins
 
   
-  #¦L¥X¥´¥d¼Æ
+  #å°å‡ºæ‰“å¡æ•¸
   print(checkins)
+  #if NULL checkins=0
   if ( is.null(checkins) ) { checkins <- 0}
-  #±N¥´¥d¼Æ¦s¤J°}¦C
+  #å°‡æ‰“å¡æ•¸å­˜å…¥é™£åˆ—
   allcheckins[i] <- checkins
 }
-#¿é¥XCSV
+#è¼¸å‡ºCSV
 write.table(allcheckins, file = "allcheckins.CSV", sep = "," , col.names = FALSE)
