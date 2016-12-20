@@ -1,6 +1,6 @@
 function wc()
 {
-d3.csv("https://jackykao.github.io/JProject/IPDifFood.csv", 
+d3.csv("https://jackykao.github.io/JProject/IPDifFood1.csv", 
   function(data)
   {
     d3.wordcloud()
