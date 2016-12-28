@@ -1,0 +1,9 @@
+name: houseprice
+account: webtest
+server: shinyapps.io
+appId: 147755
+bundleId: 662201
+url: https://webtest.shinyapps.io/houseprice/
+when: 1482895029.21951
+asMultiple: FALSE
+asStatic: FALSE
